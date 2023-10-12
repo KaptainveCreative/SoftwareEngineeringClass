@@ -1,0 +1,59 @@
+
+/* styles.css */
+body {
+  /* Set background image */
+  background-image:url(youknow.png);
+  /* Set background size to cover the entire viewport */
+  background-size: coer;
+  /* Set background to fixed position on the right side */
+  background-position: right ;
+  /* Optional: Add some styles to improve readability */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: white; /* Set default text color to white for better contrast */
+}
+
+h1 {
+  font-size: 2em; /* Set font size for h1 */
+  margin-bottom: 20px; /* Add some space below h1 */
+}
+
+label {
+  display: block; /* Make labels block-level for proper spacing */
+  margin-bottom: 10px; /* Add space below labels */
+}
+
+input {
+  padding: 5px; /* Add padding to the input field */
+}
+
+button {
+  padding: 10px; /* Add padding to the button */
+  background-color: #3498db; /* Set a background color */
+  color: white; /* Set text color for the button */
+  cursor: pointer; /* Change cursor on hover */
+}
+#copyButton {
+    padding: 10px;
+    background-color: #27ae60;
+    color: white;
+    cursor: pointer;
+  }
+  
+  #copyButton:hover {
+    background-color: #219a52;
+  }
+button:hover {
+  background-color: #2980b9; /* Change background color on hover */
+}
+
+p {
+  margin-top: 20px; /* Add space above the generated password */
+}
+
+/* Optional: Style the generated password differently */
+#generatedPassword {
+  font-weight: bold;
+  font-size: 1.2em;
+}
