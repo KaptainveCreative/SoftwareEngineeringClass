@@ -82,6 +82,20 @@ function shuffleString(str) {
   return arr.join('');
 }
 
+// copy feature added back
+
+document.getElementById('copyButton').addEventListener('click', copyFeature);
+
+function copyFeature() {
+    const generatedPasswordElement = document.getElementById('generatedPassword');
+    const passwordText = generatedPasswordElement.innerText.replace('Generated Password: ', '');
+    console.log(passwordText); // Log the passwordText to the console
+
+    navigator.clipboard.writeText(passwordText)
+      .then(() => alert('Password copied to clipboard!'))
+      .catch(err => console.error('Unable to copy to clipboard', err));
+  }
+
 //show/hide password
 function showPassword() {
   let generatedPassword = document.getElementById("generatedPassword");
