@@ -1,4 +1,8 @@
+// Variable to store the generated password
+let password = '';
+
 function generatePassword() {
+  password = ''
   const passwordLength = document.getElementById('passwordLength').value;
   const includeNumbers = document.getElementById('includeNumbers').checked;
   const includeLowercase = document.getElementById('includeLowercase').checked;
@@ -46,7 +50,7 @@ function generatePassword() {
   }
 
   // Ensure at least one character from each selected set is included
-  let password = '';
+
   for (const charSet of selectedCharacterSets) {
     const randomIndex = Math.floor(Math.random() * charSet.length);
     password += charSet.charAt(randomIndex);
@@ -61,7 +65,11 @@ function generatePassword() {
   // Shuffle the password to randomize the order
   password = shuffleString(password);
 
-  document.getElementById('generatedPassword').innerText = 'Generated Password: ' + password;
+  document.getElementById('generatedPassword').innerText = 'Password Generated ' ;
+
+    // Return the generated password
+    return password;
+  
 }
 
 // Function to shuffle a string
@@ -72,4 +80,18 @@ function shuffleString(str) {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr.join('');
+}
+
+//show/hide password
+function showPassword() {
+  let generatedPassword = document.getElementById("generatedPassword");
+
+  if (generatedPassword.getAttribute("data-shown") === "true") {
+    generatedPassword.innerHTML = "Generated Password: ********";
+    generatedPassword.setAttribute("data-shown", "false");
+  } else {
+    // Use the stored password
+    generatedPassword.innerHTML = 'Generated Password: ' + password;
+    generatedPassword.setAttribute("data-shown", "true");
+  }
 }

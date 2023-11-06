@@ -53,7 +53,9 @@ p {
 /* Optional: Style the generated password differently */
 #generatedPassword {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 2em;
+  color:darksalmon;
+  background-color: aliceblue;
 }
 
 
