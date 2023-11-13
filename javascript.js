@@ -48,7 +48,7 @@ function generatePassword() {
     alert('Please enter a valid length');
     return;
   }
-
+// This is a test
   // Ensure at least one character from each selected set is included
 
   for (const charSet of selectedCharacterSets) {
