@@ -1,5 +1,6 @@
 // Variable to store the generated password
 let password = '';
+let passwordList = [];
 
 function generatePassword() {
   password = ''
@@ -65,6 +66,12 @@ function generatePassword() {
   // Shuffle the password to randomize the order
   password = shuffleString(password);
 
+  // Add password to list
+  passwordList.push(password);
+
+  // Display the password list in the HTML
+  displayPasswordList();
+
   document.getElementById('generatedPassword').innerText = 'Password Generated ' ;
 
     // Return the generated password
@@ -108,4 +115,24 @@ function showPassword() {
     generatedPassword.innerHTML = 'Generated Password: ' + password;
     generatedPassword.setAttribute("data-shown", "true");
   }
+}
+
+// Function to display the passwordList
+function displayPasswordList() {
+  const passwordHistory = document.getElementById('passwordList');
+  passwordHistory.innerHTML = ''; // Clear the previous list
+
+  for (let i = passwordList.length - 1; i >= 0; i--) {
+    const generatedPassword = passwordList[i];
+    const listItem = document.createElement('li');
+    listItem.textContent = generatedPassword;
+    passwordHistory.appendChild(listItem);
+  }
+}
+
+//Function to toggle password history
+function togglePasswordHistory() {
+  const passwordHistory = document.getElementById('passwordHistory');
+  const currentDisplay = passwordHistory.style.display;
+  passwordHistory.style.display = currentDisplay === 'none' ? 'block' : 'none';
 }
