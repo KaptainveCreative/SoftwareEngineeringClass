@@ -59,7 +59,15 @@ p {
   font-size: 1.7em;
   color: rgb(14, 13, 14);
   margin-top: 2px; /* Add space above the generated password */
+  margin-bottom: 15px;
 }
+
+#showPasswordCheckbox {
+  margin-top: 10px; /* Adjust the margin-top value as needed */
+}
+
+
+
 
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
