@@ -10,6 +10,8 @@ function generatePassword() {
   const includeUppercase = document.getElementById('includeUppercase').checked;
   const includeSpecial = document.getElementById('includeSpecial').checked;
 
+
+
   // Define character sets
   const lowercaseCharacters = 'abcdefghijklmnopqrstuvwxyz';
   const uppercaseCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -72,7 +74,8 @@ function generatePassword() {
   // Display the password list in the HTML
   displayPasswordList();
 
-  document.getElementById('generatedPassword').innerText = 'Password Generated ' ;
+  document.getElementById('generatedPassword').innerText = ' ' ;
+  showPassword();
 
     // Return the generated password
     return password;
@@ -94,10 +97,10 @@ function shuffleString(str) {
 document.getElementById('copyButton').addEventListener('click', copyFeature);
 
 function copyFeature() {
+  const passwordText = password;
+  console.log(passwordText); 
     const generatedPasswordElement = document.getElementById('generatedPassword');
-    const passwordText = generatedPasswordElement.innerText.replace('Generated Password: ', '');
-    console.log(passwordText); // Log the passwordText to the console
-
+    
     navigator.clipboard.writeText(passwordText)
       .then(() => alert('Password copied to clipboard!'))
       .catch(err => console.error('Unable to copy to clipboard', err));
@@ -106,16 +109,19 @@ function copyFeature() {
 //show/hide password
 function showPassword() {
   let generatedPassword = document.getElementById("generatedPassword");
+  let showPasswordCheckbox = document.getElementById("showPasswordCheckbox");
 
-  if (generatedPassword.getAttribute("data-shown") === "true") {
-    generatedPassword.innerHTML = "Generated Password: ********";
-    generatedPassword.setAttribute("data-shown", "false");
-  } else {
-    // Use the stored password
+  if (showPasswordCheckbox.checked) {
+    // Show the actual password when the checkbox is checked
     generatedPassword.innerHTML = 'Generated Password: ' + password;
     generatedPassword.setAttribute("data-shown", "true");
+  } else {
+    // Show asterisks when the checkbox is unchecked
+    generatedPassword.innerHTML = "Generated Password: ********";
+    generatedPassword.setAttribute("data-shown", "false");
   }
 }
+
 
 // Function to display the passwordList
 function displayPasswordList() {
