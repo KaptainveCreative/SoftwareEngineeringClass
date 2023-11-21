@@ -3,6 +3,7 @@ let password = '';
 let passwordList = [];
 
 function generatePassword() {
+  passwordList = []; 
  // password = ''
 
   const passwordNum = document.getElementById('passwordNum').value;
