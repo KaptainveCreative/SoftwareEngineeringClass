@@ -53,23 +53,27 @@ function generatePassword() {
     return;
   }
 
-  // Ensure at least one character from each selected set is included
-  for (const charSet of selectedCharacterSets) {
-    const randomIndex = Math.floor(Math.random() * charSet.length);
-    password += charSet.charAt(randomIndex);
+  for (let i = 0; i < passwordNum; i++) {
+    let password = '';
+
+    // Ensure at least one character from each selected set is included
+    for (const charSet of selectedCharacterSets) {
+      const randomIndex = Math.floor(Math.random() * charSet.length);
+      password += charSet.charAt(randomIndex);
+    }
+
+    // Generate the remaining characters
+    for (let j = password.length; j < length; j++) {
+      const randomIndex = Math.floor(Math.random() * allCharacters.length);
+      password += allCharacters.charAt(randomIndex);
+    }
+
+    // Shuffle the password to randomize the order
+    password = shuffleString(password);
+
+    // Add password to list
+    passwordList.push(password);
   }
-
-  // Generate the remaining characters
-  for (let i = password.length; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * allCharacters.length);
-    password += allCharacters.charAt(randomIndex);
-  }
-
-  // Shuffle the password to randomize the order
-  password = shuffleString(password);
-
-  // Add password to list
-  passwordList.push(password);
 
   // Display the password list in the HTML
   displayPasswordList();
@@ -85,12 +89,12 @@ function generatePassword() {
 // generate multiple password. its a function but trying to implement it so that we only have one button
 function generateMultiplePasswords() {
   const passwordNum = document.getElementById('passwordNum').value;
+  passwordList = [];
 
   for (let i = 0; i < passwordNum; i++) {
     generatePassword();
   }
 }
-
 // Function to shuffle a string
 function shuffleString(str) {
   const arr = str.split('');
@@ -121,8 +125,15 @@ function showPassword() {
   let showPasswordCheckbox = document.getElementById("showPasswordCheckbox");
 
   if (showPasswordCheckbox.checked) {
-    // Show the actual password when the checkbox is checked
-    generatedPassword.innerHTML = 'Generated Password: ' + password;
+    // Show all generated passwords when the checkbox is checked
+    generatedPassword.innerHTML = 'Generated Passwords:<br>';
+    
+    for (const generatedPasswordItem of passwordList) {
+      const passwordItemElement = document.createElement('div');
+      passwordItemElement.textContent = '- ' + generatedPasswordItem;
+      generatedPassword.appendChild(passwordItemElement);
+    }
+
     generatedPassword.setAttribute("data-shown", "true");
   } else {
     // Show asterisks when the checkbox is unchecked
@@ -130,6 +141,7 @@ function showPassword() {
     generatedPassword.setAttribute("data-shown", "false");
   }
 }
+
 
 
 // Function to display the passwordList
