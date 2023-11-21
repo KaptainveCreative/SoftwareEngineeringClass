@@ -3,7 +3,8 @@ let password = '';
 let passwordList = [];
 
 function generatePassword() {
-  password = ''
+ // password = ''
+
   const passwordNum = document.getElementById('passwordNum').value;
   const passwordLength = document.getElementById('passwordLength').value;
   const includeNumbers = document.getElementById('includeNumbers').checked;
@@ -54,7 +55,7 @@ function generatePassword() {
   }
 
   for (let i = 0; i < passwordNum; i++) {
-    let password = '';
+    //let password = '';
 
     // Ensure at least one character from each selected set is included
     for (const charSet of selectedCharacterSets) {
