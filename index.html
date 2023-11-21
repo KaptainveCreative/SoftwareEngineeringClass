@@ -15,6 +15,9 @@
 <body>
 <h1>Password Generator</h1>
 
+  <label for="passwordNum">Number of Passwords:</label>
+  <input type="number" id="passwordNum" value="1">
+
   <label for="passwordLength">Password Length:</label>
   <input type="number" id="passwordLength" value="">
 
@@ -34,6 +37,7 @@
     <input type="checkbox" id="includeSpecial">Characters
   </label>
     <button onclick="generatePassword()">Generate Password</button>
+    <button onclick="generateMultiplePasswords()">Generate Multiple Passwords</button>
     <button id="copyButton">Copy</button>
     
     <input type="checkbox" id="showPasswordCheckbox" onclick="showPassword()">Show Password
@@ -48,7 +52,7 @@
     <ul id="passwordList"></ul>
   </div>
   
-
+  <ul id="passwordList"></ul>
   <script src="javascript.js"></script>
 
   <div class="bg"></div>

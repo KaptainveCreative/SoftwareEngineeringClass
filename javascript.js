@@ -4,6 +4,7 @@ let passwordList = [];
 
 function generatePassword() {
   password = ''
+  const passwordNum = document.getElementById('passwordNum').value;
   const passwordLength = document.getElementById('passwordLength').value;
   const includeNumbers = document.getElementById('includeNumbers').checked;
   const includeLowercase = document.getElementById('includeLowercase').checked;
@@ -80,6 +81,15 @@ function generatePassword() {
     // Return the generated password
     return password;
   
+}
+
+// generate multiple password
+function generateMultiplePasswords() {
+  const passwordNum = document.getElementById('passwordNum').value;
+
+  for (let i = 0; i < passwordNum; i++) {
+    generatePassword();
+  }
 }
 
 // Function to shuffle a string
