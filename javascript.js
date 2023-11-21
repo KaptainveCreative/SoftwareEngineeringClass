@@ -54,7 +54,6 @@ function generatePassword() {
   }
 
   // Ensure at least one character from each selected set is included
-
   for (const charSet of selectedCharacterSets) {
     const randomIndex = Math.floor(Math.random() * charSet.length);
     password += charSet.charAt(randomIndex);
@@ -83,7 +82,7 @@ function generatePassword() {
   
 }
 
-// generate multiple password
+// generate multiple password. its a function but trying to implement it so that we only have one button
 function generateMultiplePasswords() {
   const passwordNum = document.getElementById('passwordNum').value;
 
