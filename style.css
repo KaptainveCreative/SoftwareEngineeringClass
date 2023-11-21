@@ -3,6 +3,7 @@
 body {
   /*background-color: rgb(119, 194, 219);
   /* Set background size to cover the entire viewport */
+  text-align: center;
   background-size: core;
   background-position: right ;
   font-family: sans-serif;
@@ -79,7 +80,7 @@ h1 {
   font-family: cursive;
   font-size: 2em; /* Set font size for h1 */
   margin-top: 2px; /* Add some space below h1 */
-  text-align: left;
+  text-align: center;
 
 }
 
