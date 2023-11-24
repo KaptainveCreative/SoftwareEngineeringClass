@@ -1,11 +1,14 @@
 /* Three columns side by side */
 .column {
-    float: left;
-    width: 20%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-    border: #000;
-  }
+  float: left;
+  width: 23%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  border: 2px solid #000; /* Black border */
+  border-radius: 20px; /* Adjust the value to make the column more or less oval */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
   
   /* Display the columns below each other instead of side by side on small screens */
   @media screen and (max-width: 650px) {
@@ -33,21 +36,55 @@
   }
   
   .title {
-    color: grey;
+    color: rgb(1, 1, 1);
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid #000000; 
+    border-radius: 20px; /* Adjust the value to make the button more or less oval */
+    box-sizing: border-box;
+    width: 65%;
+    background-color: rgb(255, 254, 252);
+    text-align: center;
   }
   
   .button {
-    border: none;
+    border: 2px solid #ffffff; 
     outline: 0;
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: #000;
+    background-color: #110e0e;
     text-align: center;
     cursor: pointer;
     width: 100%;
+    border-radius: 20px; /* Adjust the value to make the button more or less oval */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+  .job {
+    color: rgb(0, 0, 0);
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid #000000; 
+    border-radius: 20px; /* Adjust the value to make the button more or less oval */
+    box-sizing: border-box;
+    width: 65%;
+    background-color: rgb(255, 254, 252, .3);
+    text-align: center;
   }
-  
+
+.hobby{
+  color: rgb(1, 1, 1);
+  font-size: large;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border: 2px solid #000000; 
+  border-radius: 20px; /* Adjust the value to make the button more or less oval */
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgb(255, 254, 252, .3);
+  text-align: center;
+}
+
   .button:hover {
     background-color: #555;
   }
@@ -57,11 +94,11 @@
 body  {
     background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
   background-size:cover;
-        -webkit-animation: slidein 100s;
-        animation: slidein 100s;
+        -webkit-animation:backwards 10s;
+        animation: slidein 10s;
 
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode:both;
+        animation-fill-mode:backwards;
 
         -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
@@ -71,13 +108,13 @@ body  {
 }
 
 @-webkit-keyframes slidein {
-from {background-position: top; background-size:3000px; }
-to {background-position: -100px 0px;background-size:2750px;}
+from {background-position: bottom; background-size:2800px; }
+to {background-position: 0px 0px;background-size:3000px;}
 }
 
 @keyframes slidein {
-from {background-position: top;background-size:3000px; }
-to {background-position: -100px 0px;background-size:2750px;}
+from {background-position: top;background-size:25000px; }
+to {background-position: -100px 0px;background-size:2000px;}
 
 }
 
@@ -102,4 +139,22 @@ to {background-position: -100px 0px;background-size:2750px;}
   color:white;
   font-family: 'Source Code Pro', monospace;
   text-transform:uppercase;
+}
+
+.back-to-home {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  background-color:#6c0909; 
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-to-home:hover {
+  background-color: rgba(76, 175, 80, 0.8); /* Darker semi-transparent green color on hover */
 }
