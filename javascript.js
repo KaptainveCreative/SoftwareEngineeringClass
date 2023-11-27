@@ -56,7 +56,7 @@ function generatePassword() {
   }
 
   for (let i = 0; i < passwordNum; i++) {
-    //let password = '';
+    let password = ''; // Declare a new variable for each iteration
 
     // Ensure at least one character from each selected set is included
     for (const charSet of selectedCharacterSets) {
