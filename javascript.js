@@ -4,7 +4,7 @@ let passwordList = [];
 
 function generatePassword() {
   passwordList = []; 
- // password = ''
+  password = ''
 
   const passwordNum = document.getElementById('passwordNum').value;
   const passwordLength = document.getElementById('passwordLength').value;
@@ -56,7 +56,7 @@ function generatePassword() {
   }
 
   for (let i = 0; i < passwordNum; i++) {
-    let password = ''; // Declare a new variable for each iteration
+    password = ''; // Reset password for each iteration
 
     // Ensure at least one character from each selected set is included
     for (const charSet of selectedCharacterSets) {
@@ -88,15 +88,6 @@ function generatePassword() {
   
 }
 
-// generate multiple password. its a function but trying to implement it so that we only have one button
-function generateMultiplePasswords() {
-  const passwordNum = document.getElementById('passwordNum').value;
-  passwordList = [];
-
-  for (let i = 0; i < passwordNum; i++) {
-    generatePassword();
-  }
-}
 // Function to shuffle a string
 function shuffleString(str) {
   const arr = str.split('');
@@ -149,13 +140,13 @@ function showPassword() {
 // Function to display the passwordList
 function displayPasswordList() {
   const passwordHistory = document.getElementById('passwordList');
-  passwordHistory.innerHTML = ''; // Clear the previous list
 
+  // Display passwords with most recent at the top
   for (let i = passwordList.length - 1; i >= 0; i--) {
     const generatedPassword = passwordList[i];
     const listItem = document.createElement('li');
     listItem.textContent = generatedPassword;
-    passwordHistory.appendChild(listItem);
+    passwordHistory.insertBefore(listItem, passwordHistory.firstChild);
   }
 }
 
