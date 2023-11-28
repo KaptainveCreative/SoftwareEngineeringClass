@@ -99,7 +99,6 @@ function shuffleString(str) {
 }
 
 // copy feature added back
-
 document.getElementById('copyButton').addEventListener('click', copyFeature);
 
 function copyFeature() {
@@ -139,7 +138,7 @@ function showPassword() {
 function displayPasswordList() {
   const passwordHistory = document.getElementById('passwordList');
 
-  // Display passwords with most recent at the top
+  // Display most recent passwords at the top
   for (let i = passwordList.length - 1; i >= 0; i--) {
     const generatedPassword = passwordList[i];
     const listItem = document.createElement('li');
