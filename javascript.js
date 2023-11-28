@@ -103,14 +103,12 @@ function shuffleString(str) {
 document.getElementById('copyButton').addEventListener('click', copyFeature);
 
 function copyFeature() {
-  const passwordText = password;
-  console.log(passwordText); 
-    const generatedPasswordElement = document.getElementById('generatedPassword');
-    
-    navigator.clipboard.writeText(passwordText)
-      .then(() => alert('Password copied to clipboard!'))
-      .catch(err => console.error('Unable to copy to clipboard', err));
-  }
+  const passwordsToCopy = passwordList.join('\n');
+
+  navigator.clipboard.writeText(passwordsToCopy)
+    .then(() => alert('Passwords copied to clipboard!'))
+    .catch(err => console.error('Unable to copy passwords to clipboard', err));
+}
 
 //show/hide password
 function showPassword() {
