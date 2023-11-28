@@ -18,7 +18,7 @@ main {
 
 .navbar {
   height: 5rem;
-  width: 16rem; /* Adjusted width to match the expanded width on hover */
+  width: 86rem; /* Adjusted width to match the expanded width on hover */
   background-color: rgb(2, 16, 16);
   transition: 200ms ease;
   position: fixed;
