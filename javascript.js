@@ -155,3 +155,10 @@ function togglePasswordHistory() {
   const currentDisplay = passwordHistory.style.display;
   passwordHistory.style.display = currentDisplay === 'none' ? 'block' : 'none';
 }
+
+
+// When the user clicks on div, open the popup
+function myPopUp() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
