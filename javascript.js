@@ -157,8 +157,5 @@ function togglePasswordHistory() {
 }
 
 
-// When the user clicks on div, open the popup
-function myPopUp() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
+
+

@@ -70,31 +70,36 @@ main {
   display: block;
 }
 
-/* Popup container */
-.popup {
+/* Tooltip container */
+.tooltip {
   position: relative;
   display: inline-block;
-  cursor: pointer;
 }
 
-/* The actual popup (appears on top) */
-.popup .popuptext {
+/* Tooltip text */
+.tooltip .tooltiptext {
   visibility: hidden;
-  width: 160px;
+  width: 120px;
   background-color: #555;
   color: #fff;
   text-align: center;
+  padding: 5px 0;
   border-radius: 6px;
-  padding: 8px 0;
+
+  /* Position the tooltip text */
   position: absolute;
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -80px;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-/* Popup arrow */
-.popup .popuptext::after {
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -105,22 +110,10 @@ main {
   border-color: #555 transparent transparent transparent;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
   visibility: visible;
-  -webkit-animation: fadeIn 0.5s;
-  animation: fadeIn 1s
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
+  opacity: 1;
 }
 
 h1 {
