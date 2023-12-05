@@ -15,7 +15,16 @@ body {
 main {
   margin-top: 5rem;
 }
+/* Your existing styles can go here */
 
+#showPasswordCheckbox {
+  transform: scale(1.2); /* Adjust the scale factor to increase or decrease the size */
+}
+#passwordList {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
 .navbar {
   height: 5rem;
   width: 86rem; /* Adjusted width to match the expanded width on hover */
