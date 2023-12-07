@@ -83,6 +83,9 @@ main {
 .tooltip {
   position: relative;
   display: inline-block;
+  border: 2px solid #000000; 
+  background-color: rgb(173, 14, 14)
+
 }
 
 /* Tooltip text */
