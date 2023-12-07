@@ -15,7 +15,7 @@
 
   <div class="tooltip">Help?
     <span class="tooltiptext">Select the number of passwords you
-      want using  the text box to the left</span>
+      want using the text box to the left</span>
   </div>
 
 
@@ -23,8 +23,8 @@
   <input type="number" id="passwordLength" value="">
 
   <div class="tooltip">Help?
-    <span class="tooltiptext">Select the number of characters you
-      want in each password in the text box to the left</span>
+    <span class="tooltiptext">Select length of your password/s in the text box to the left 
+       </span>
   </div>
 
   <label>
@@ -42,18 +42,18 @@
  
 
   <label for="includeSpecial" class="checkbox-label">
-    <input type="checkbox" id="includeSpecial">Characters
+    <input type="checkbox" id="includeSpecial"> Special Characters
   </label>
 
   <div class="tooltip">Help?
     <span class="tooltiptext">Select the checkboxes
-      next to their associated  character types to include those characters
-      in your passwords
+      and customize your password/s as needed
     </span>
   </div>
 
     <button onclick="generatePassword()">Generate Password</button>
     <button id="copyButton" onclick="copyFeature()">Copy</button>
+    <span id="copied" ></span>
     
     <input type="checkbox" id="showPasswordCheckbox" onclick="showPassword()">Show Password
   <div id="generatedPassword"></div>

@@ -109,6 +109,32 @@ main {
   opacity: 0;
   transition: opacity 0.3s;
 }
+/*error id*/
+#copied {
+  color: rgb(255, 0, 0);
+  font-size: 24px;
+  border: 2px solid rgb(251, 249, 249);
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.853);
+}
+
+.explosion {
+  animation: explode 0.3s ease-out;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 
 /* Tooltip arrow */
 .tooltip .tooltiptext::after {

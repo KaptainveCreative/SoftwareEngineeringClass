@@ -103,13 +103,22 @@ document.getElementById('copyButton').addEventListener('click', copyFeature);
 
 function copyFeature() {
   const passwordText = password;
-  console.log(passwordText); 
-    const generatedPasswordElement = document.getElementById('generatedPassword');
-    
-    navigator.clipboard.writeText(passwordText)
-      .then(() => alert('Password copied to clipboard!'))
-      .catch(err => console.error('Unable to copy to clipboard', err));
-  }
+  const copied = document.getElementById("copied");
+
+  navigator.clipboard.writeText(passwordText)
+    .then(() => {
+      copied.textContent = "Password Copied";
+      // Trigger explosion animation
+      copied.classList.add("explosion");
+
+      // Set a timeout to remove the text and reset the animation after 5 seconds
+      setTimeout(() => {
+        copied.textContent = "";
+        copied.classList.remove("explosion"); // Remove the class to reset animation
+      }, 4000);
+    })
+    .catch(err => console.error('Unable to copy to clipboard', err));
+}
 
 //show/hide password
 function showPassword() {
