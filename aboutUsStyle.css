@@ -68,7 +68,7 @@
     border: 2px solid #000000; 
     border-radius: 20px; /* Adjust the value to make the button more or less oval */
     box-sizing: border-box;
-    width: 65%;
+    width: 80%;
     background-color: rgb(255, 254, 252, .3);
     text-align: center;
   }
@@ -157,4 +157,57 @@ to {background-position: -100px 0px;background-size:2000px;}
 
 .back-to-home:hover {
   background-color: rgba(76, 175, 80, 0.8); /* Darker semi-transparent green color on hover */
+}
+.navbar {
+  height: 5rem;
+  width: 86rem; /* Adjusted width to match the expanded width on hover */
+  /*background-color: rgb(2, 16, 16);*/
+  transition: 200ms ease;
+  position: fixed;
+  top: 0;
+  right: 0; /* Align left edge to the left side of the webpage */
+  z-index: 1000;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 7px;;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items:stretch;
+  justify-content:right;
+  height: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: #b94f29;
+  text-decoration: none;
+  filter:brightness() opacity(0.9);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  color: black;
+}
+
+.nav-link svg {
+  min-width: 2rem;
+  margin: 0 1rem;
+}
+
+.navbar:hover {
+  width: 100%;
+}
+
+.navbar:hover .link-text {
+  display: block;
 }
